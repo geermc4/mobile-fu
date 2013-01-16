@@ -27,13 +27,14 @@ module ActionController
       #      has_mobile_fu(true)
       #    end
 
-      def has_mobile_fu(test_mode = false)
+      def has_mobile_fu(options)
         include ActionController::MobileFu::InstanceMethods
 
-        if test_mode
+        if options[:test_mode]
           before_filter :force_mobile_format
         else
-          before_filter :set_mobile_format
+          options.delete(:test_mode)
+          before_filter :set_mobile_format, options
         end
 
         helper_method :is_mobile_device?
