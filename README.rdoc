@@ -9,9 +9,9 @@ of the request from :html to :mobile.
 
 The master branch of this plugin is Rails 3 compatible.
 
-To use the Rails 3 compatible version of this plugin, please install it like so:
+To use the Rails 3 compatible version of this plugin, add it to your Gemfile:
 
-    rails plugin install git://github.com/brendanlim/mobile-fu.git
+    gem 'mobile-fu', :git => 'git://github.com/brendanlim/mobile-fu.git'
 
 == Rails 2 Compatibility
 
